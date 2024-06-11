@@ -1,8 +1,12 @@
 pipeline {
-    agent {
-        docker { image 'node:20.11.1-alpine3.19' }
-    }
+    agent any
     stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/ZihouWong/Jenkinsfile.git']]])
+            }
+        }
         stage('Test') {
             steps {
                 sh 'node --version'
