@@ -12,8 +12,8 @@ properties([
         }
         '''
         ]]],
-    ]
-)
+    )]
+])
 pipeline {
     agent any
 
