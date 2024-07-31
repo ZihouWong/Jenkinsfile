@@ -1,3 +1,6 @@
+def utils = evaluate(new File("${JENKINS_HOME}/workspace/${JOB_NAME}/test/utils.groovy"))
+
+
 properties([
     parameters([
     // 平台选择参数选项 PublishPlatform
@@ -13,8 +16,9 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                   def utils = load 'utils.groovy'
-                   utils.sayHello('world')
+                    def greeting = utils.sayHello("World")
+                    println(greeting)
+
                 }
             }
         }
