@@ -1,5 +1,8 @@
-def utils = evaluate(new File("${JENKINS_HOME}/workspace/${JOB_NAME}/test/utils.groovy"))
+def utils = load 'test/utils.groovy'
 
+
+def greetingOutside = utils.sayHello("World")
+println(greetingOutside)
 
 properties([
     parameters([
