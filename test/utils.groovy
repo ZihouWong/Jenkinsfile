@@ -1,4 +1,6 @@
-def sayHello(context) {
-    echo "Hello ${context}"
+class utils {
+    def sayHello() {
+        echo "Hello world"
 
+    }
 }
