@@ -2,8 +2,7 @@
 //def utilsClass = this.class.classLoader.parseClass(new File('utils.groovy'))
 //def utils = utilsClass.newInstance() // 创建 utils 类的实例
 
-def somename
-somename = load 'test/utils.groovy'
+
 
 properties([
     parameters([
@@ -20,6 +19,9 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
+                    def somename
+                    somename = load 'test/utils.groovy'
+
                     somename.sayHello()
 
 
