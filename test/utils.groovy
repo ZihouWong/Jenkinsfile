@@ -1,7 +1,7 @@
 println("this is a test script")
 
-    def sayHello() {
-        echo "Hello world"
+    def sayHello(String name) {
+        echo "Hello world ${name}"
 
     }
 
