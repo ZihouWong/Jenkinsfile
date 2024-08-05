@@ -22,7 +22,7 @@ pipeline {
                     def somename
                     somename = load 'test/utils.groovy'
 
-                    somename.sayHello("")
+                    somename.sayHello("huangzhihao")
 
 
                 }
