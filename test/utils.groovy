@@ -1,4 +1,4 @@
-def sayHello(String context) {
+def sayHello(context) {
     echo "Hello ${context}"
 
 }
