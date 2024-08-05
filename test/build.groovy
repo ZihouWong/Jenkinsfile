@@ -1,5 +1,8 @@
-def utils = load 'test/utils.groovy'
-
+node { // 加入 node 块以提供必要的 FilePath 上下文
+    def utils = load 'test/utils.groovy'
+    def greetingOutside = utils.sayHello("World")
+    println(greetingOutside)
+}
 
 def greetingOutside = utils.sayHello("World")
 println(greetingOutside)
