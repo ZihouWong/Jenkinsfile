@@ -22,13 +22,19 @@ pipeline {
                 script {
                     def demoConfig
                     demoConfig = load 'test/demo/demoConfig.groovy'
-                    echo "demoName: ${demoConfig.name}"
+                    echo "demoConfig.name: ${demoConfig.name}"
+                    echo "demoConfig.project.name: ${demoConfig.project.name}"
+                    echo "demoConfig.project.version: ${demoConfig.project.version}"
+                    echo "demoConfig.build.tool: ${demoConfig.build.tool}"
+
                     def utils
                     utils = load 'Utils/utils.groovy'
                     echo "utilsName: ${utils.utilsName}"
 
 
                     utils.sayHello("huangzhihao")
+
+
 
 
                 }
