@@ -16,11 +16,13 @@ properties([
 ])
 
 pipeline {
-    agent any
     environment {
-        HOME = getHomePath("$params.PublishPlafrom}")
 
+        HOME = getHomePath("$params.PublishPlafrom}")
     }
+
+    agent any
+
     stages {
         stage('Prepare') {
             steps {
@@ -35,8 +37,8 @@ pipeline {
 //                    echo "The name of the utility is: ${utils.name}"
 ////
 ////
-//                    echo "${utils.sayHello("Wong")}"
-//                    echo "${utils.sayHello2("Wong")}"
+                    echo "${utils.sayHello("Wong")}"
+                    echo "${utils.sayHello2("Wong")}"
 
 
                 }
