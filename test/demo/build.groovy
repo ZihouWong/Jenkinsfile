@@ -3,8 +3,13 @@
 
 
 def getUtils() {
-    def utilsTemp = load 'Utils/utils.groovy'
-    return utilsTemp
+    if (env.isUtilsLoad) {
+        env.utils = load 'Utils/utils.groovy'
+        return "true"
+    } else {
+        return "false"
+    }
+
 }
 
 properties([
@@ -20,7 +25,7 @@ pipeline {
     environment {
         utilsObject = getUtils()
 
-        HOME = utilsObject.getHomePath("${params.PublishPlafrom}")
+        HOME = env.utils.getHomePath("${params.PublishPlafrom}")
     }
 
     agent any
