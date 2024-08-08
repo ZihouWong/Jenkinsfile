@@ -1,10 +1,5 @@
 
 
-//def getHomePath(String platform) {
-//    env.utils = load 'Utils/utils.groovy'
-//    return utils.getHomePath(platform)
-//}
-
 def getUtils() {
     def utils = load 'Utils/utils.groovy'
     return utils
@@ -42,8 +37,8 @@ pipeline {
 //                    echo "The name of the utility is: ${utils.name}"
 ////
 ////
-                    echo "${env.utils.sayHello("Wong")}"
-                    echo "${utils.sayHello("Wong")}"
+//                    echo "${env.utils.sayHello("Wong")}"
+//                    echo "${utils.sayHello("Wong")}"
 
 
                 }
