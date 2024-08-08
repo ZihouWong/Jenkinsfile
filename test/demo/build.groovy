@@ -1,8 +1,7 @@
 
 
-def getHomePath(String platform) {
+def load() {
     utils = load 'Utils/utils.groovy'
-    return utils.getHomePath(platform)
 }
 
 
@@ -17,7 +16,8 @@ properties([
 
 pipeline {
     environment {
-        HOME = getHomePath("${params.PublishPlafrom}")
+        isLoad = load()
+        HOME = utils.getHomePath("${params.PublishPlafrom}")
     }
 
     agent any
