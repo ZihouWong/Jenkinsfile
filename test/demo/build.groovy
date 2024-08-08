@@ -37,7 +37,7 @@ pipeline {
 ////
 ////
                     echo "${utils.sayHello("Wong")}"
-                    echo "${utils.sayHello2("Wong")}"
+                    echo "${utils.sayHello("Wong")}"
 
 
                 }
