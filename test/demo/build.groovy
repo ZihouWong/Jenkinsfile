@@ -22,8 +22,9 @@ pipeline {
                 script {
                     echo "environment"
                     env.utils = load 'Utils/utils.groovy'
-
-                    env.HOME = env.utils.getHomePath(params.PublishPlatform)
+                    def selectedPlatform = params.PublishPlatform
+                    echo "Selected platform: ${selectedPlatform}"
+                    env.HOME = env.utils.getHomePath(selectedPlatform)
 
                 }
                 script {
