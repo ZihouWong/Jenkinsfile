@@ -21,7 +21,7 @@ class Utils {
         }
     }
 
-    String sayHello(String who) {
+    static String sayHello(String who) {
         return "Hello world, ${who}"
     }
 }
