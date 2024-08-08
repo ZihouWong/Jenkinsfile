@@ -37,7 +37,7 @@ pipeline {
 //                    echo "The name of the utility is: ${utils.name}"
 ////
 ////
-                    echo "${Utils.sayHello("Wong")}"
+//                    echo "${Utils.sayHello("Wong")}"
 
 
 
