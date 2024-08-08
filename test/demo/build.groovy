@@ -17,17 +17,21 @@ properties([
 ])
 
 pipeline {
-    environment {
-        utils = getUtils()
 
-        HOME = utils.getHomePath("$params.PublishPlafrom}")
-    }
 
     agent any
 
     stages {
+
         stage('Prepare') {
             steps {
+                script {
+                    echo "environment"
+                    env.utils = getUtils()
+
+                    env.HOME = env.utils.getHomePath("$params.PublishPlafrom}")
+
+                }
                 script {
                     echo "HOME: ${env.HOME}"
                     def demoConfig = load 'test/demo/demoConfig.groovy'
