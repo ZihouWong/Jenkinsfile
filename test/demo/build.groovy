@@ -20,7 +20,7 @@ pipeline {
     environment {
         utilsObject = getUtils()
 
-        HOME = utilsTemp.getHomePath("$params.PublishPlafrom}")
+        HOME = utilsTemp.getHomePath("${params.PublishPlafrom}")
     }
 
     agent any
