@@ -1,4 +1,3 @@
-package demo
 
 //def utilsClass = this.class.classLoader.parseClass(new File('utils.groovy'))
 //def utils = utilsClass.newInstance() // 创建 utils 类的实例
@@ -6,11 +5,12 @@ package demo
 def utils = load 'Utils/utils.groovy'
 
 properties([
-        parameters([
+        parameters(
+                [
                 // 平台选择参数选项 PublishPlatform
                 choice(choices: ['Android', 'IOS', 'MAC', 'OpenHarmony'], description: '选择打包平台', name: 'PublishPlatform'),
 
-        ]),
+        ])
 ])
 
 pipeline {
@@ -29,7 +29,7 @@ pipeline {
                     echo "The name of the utility is: ${utils.name}"
 
 
-                    utils.sayHello("huangzhihao")
+                    utils.sayHello("Wong")
 
 
 
