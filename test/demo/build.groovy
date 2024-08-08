@@ -1,5 +1,10 @@
 
 
+def getHomePath(String platform) {
+    def utils = load 'Utils/utils.groovy'
+    return utils.getHomePath(platform)
+}
+
 
 properties([
         parameters(
@@ -12,7 +17,10 @@ properties([
 
 pipeline {
     agent any
+    environment {
+        HOME = getHomePath("$params.PublishPlafrom}")
 
+    }
     stages {
         stage('Prepare') {
             steps {

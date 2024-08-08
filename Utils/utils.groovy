@@ -13,12 +13,12 @@ class Utils {
         return instance
     }
 
-    static def sayHello(String name) {
-        return "Hello world ${name}"
-    }
-
-    static def sayHello2(String name) {
-        return  "Hello world 222 ${name}"
+    String getHomePath(String PublishPlatform) {
+        if (PublishPlatform.contains('Android') || PublishPlatform.contains('OpenHarmony')) {
+            return 'C:/Users/admin'
+        } else {
+            return '/Users/admin'
+        }
     }
 }
 
