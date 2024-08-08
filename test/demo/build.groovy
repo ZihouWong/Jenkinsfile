@@ -23,7 +23,7 @@ pipeline {
                     echo "environment"
                     env.utils = load 'Utils/utils.groovy'
 
-                    env.HOME = env.utils.getHomePath("$params.PublishPlafrom}")
+//                    env.HOME = env.utils.getHomePath("$params.PublishPlafrom}")
 
                 }
                 script {
