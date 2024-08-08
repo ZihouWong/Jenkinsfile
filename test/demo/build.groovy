@@ -1,16 +1,10 @@
 
 
-
-
-def getUtils() {
-    if (env.isUtilsLoad) {
-        env.utils = load 'Utils/utils.groovy'
-        return "true"
-    } else {
-        return "false"
-    }
-
+def getHomePath(String platform) {
+    utils = load 'Utils/utils.groovy'
+    return utils.getHomePath(platform)
 }
+
 
 properties([
         parameters(
@@ -23,9 +17,7 @@ properties([
 
 pipeline {
     environment {
-        utilsObject = getUtils()
-
-        HOME = env.utils.getHomePath("${params.PublishPlatform}")
+        HOME = getHomePath("${params.PublishPlafrom}")
     }
 
     agent any
@@ -44,8 +36,8 @@ pipeline {
 //                    echo "The name of the utility is: ${utils.name}"
 ////
 ////
-                    echo "${env.utils.sayHello("Wong")}"
                     echo "${utils.sayHello("Wong")}"
+                    echo "${utils.sayHello2("Wong")}"
 
 
                 }
