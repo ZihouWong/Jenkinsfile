@@ -1,9 +1,9 @@
 
 
-def getHomePath(String platform) {
-    env.utils = load 'Utils/utils.groovy'
-    return utils.getHomePath(platform)
-}
+//def getHomePath(String platform) {
+//    env.utils = load 'Utils/utils.groovy'
+//    return utils.getHomePath(platform)
+//}
 
 def getUtils() {
     def utils = load 'Utils/utils.groovy'
