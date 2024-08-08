@@ -1,10 +1,14 @@
 
 
 def getHomePath(String platform) {
-    def utils = load 'Utils/utils.groovy'
+    env.utils = load 'Utils/utils.groovy'
     return utils.getHomePath(platform)
 }
 
+def getUtils() {
+    def utils = load 'Utils/utils.groovy'
+    return utils
+}
 
 properties([
         parameters(
@@ -17,8 +21,9 @@ properties([
 
 pipeline {
     environment {
+        utils = getUtils()
 
-        HOME = getHomePath("$params.PublishPlafrom}")
+//        HOME = getHomePath("$params.PublishPlafrom}")
     }
 
     agent any
@@ -27,7 +32,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                    echo "${env.HOME}"
+                    echo "HOME: ${env.HOME}"
                     def demoConfig = load 'test/demo/demoConfig.groovy'
                     echo "demoConfig.name: ${demoConfig.name}"
                     echo "demoConfig.project.name: ${demoConfig.project.name}"
@@ -37,7 +42,7 @@ pipeline {
 //                    echo "The name of the utility is: ${utils.name}"
 ////
 ////
-                    echo "${utils.sayHello("Wong")}"
+                    echo "${env.utils.sayHello("Wong")}"
                     echo "${utils.sayHello2("Wong")}"
 
 
