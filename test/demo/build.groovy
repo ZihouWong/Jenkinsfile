@@ -1,8 +1,10 @@
 
 
 def getUtils() {
-    def utils = load 'Utils/utils.groovy'
-    return utils
+    if (!binding.hasVariable('utils')) {
+        binding.utils = load 'Utils/utils.groovy'
+    }
+    return binding.utils
 }
 
 properties([
