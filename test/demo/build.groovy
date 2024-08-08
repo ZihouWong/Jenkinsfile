@@ -3,8 +3,8 @@
 
 
 def getUtils() {
-    def utils = load 'Utils/utils.groovy'
-    return utils
+    def utilsTemp = load 'Utils/utils.groovy'
+    return utilsTemp
 }
 
 properties([
@@ -20,7 +20,7 @@ pipeline {
     environment {
         utilsObject = getUtils()
 
-        HOME = utilsObject.getHomePath("$params.PublishPlafrom}")
+        HOME = utilsTemp.getHomePath("$params.PublishPlafrom}")
     }
 
     agent any
