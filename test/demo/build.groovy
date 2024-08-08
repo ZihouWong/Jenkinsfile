@@ -1,11 +1,5 @@
 
 
-def getUtils() {
-    if (!binding.hasVariable('utils')) {
-        binding.utils = load 'Utils/utils.groovy'
-    }
-    return binding.utils
-}
 
 properties([
         parameters(
@@ -27,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo "environment"
-                    env.utils = getUtils()
+                    env.utils = load 'Utils/utils.groovy'
 
                     env.HOME = env.utils.getHomePath("$params.PublishPlafrom}")
 
