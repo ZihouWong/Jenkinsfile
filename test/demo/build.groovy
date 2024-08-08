@@ -25,6 +25,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
+                    echo "${env.HOME}"
                     def demoConfig = load 'test/demo/demoConfig.groovy'
                     echo "demoConfig.name: ${demoConfig.name}"
                     echo "demoConfig.project.name: ${demoConfig.project.name}"
