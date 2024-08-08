@@ -13,12 +13,12 @@ class Utils {
         return instance
     }
 
-    def sayHello(String name) {
-        echo "Hello world ${name}"
+    static def sayHello(String name) {
+        return "Hello world ${name}"
     }
 
-    def sayHello2(String name) {
-        echo "Hello world 222 ${name}"
+    static def sayHello2(String name) {
+        return  "Hello world 222 ${name}"
     }
 }
 
