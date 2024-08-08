@@ -1,9 +1,9 @@
-
+package demo
 
 //def utilsClass = this.class.classLoader.parseClass(new File('utils.groovy'))
 //def utils = utilsClass.newInstance() // 创建 utils 类的实例
 
-
+def utils = load 'Utils/utils.groovy'
 
 properties([
         parameters([
@@ -20,16 +20,13 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                    def demoConfig
-                    demoConfig = load 'test/demo/demoConfig.groovy'
+                    def demoConfig = load 'test/demo/demoConfig.groovy'
                     echo "demoConfig.name: ${demoConfig.name}"
                     echo "demoConfig.project.name: ${demoConfig.project.name}"
                     echo "demoConfig.project.version: ${demoConfig.project.version}"
                     echo "demoConfig.build.tool: ${demoConfig.build.tool}"
 
-                    def utils
-                    utils = load 'Utils/utils.groovy'
-                    echo "utilsName: ${utils.utilsName}"
+                    echo "The name of the utility is: ${utils.name}"
 
 
                     utils.sayHello("huangzhihao")
