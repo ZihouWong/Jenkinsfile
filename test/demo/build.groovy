@@ -18,22 +18,22 @@ pipeline {
 
     stages {
         stage('Prepare') {
-            steps {
-                script {
-                    def demoConfig = load 'test/demo/demoConfig.groovy'
-                    echo "demoConfig.name: ${demoConfig.name}"
-                    echo "demoConfig.project.name: ${demoConfig.project.name}"
-                    echo "demoConfig.project.version: ${demoConfig.project.version}"
-                    echo "demoConfig.build.tool: ${demoConfig.build.tool}"
-                    def utils = load 'Utils/utils.groovy'
-                    echo "The name of the utility is: ${utils.name}"
+            node {
+                steps {
+                    script {
+                        def demoConfig = load 'test/demo/demoConfig.groovy'
+                        echo "demoConfig.name: ${demoConfig.name}"
+                        echo "demoConfig.project.name: ${demoConfig.project.name}"
+                        echo "demoConfig.project.version: ${demoConfig.project.version}"
+                        echo "demoConfig.build.tool: ${demoConfig.build.tool}"
+                        def utils = load 'Utils/utils.groovy'
+                        echo "The name of the utility is: ${utils.name}"
 
 
-                    utils.sayHello("Wong")
+                        utils.sayHello("Wong")
 
 
-
-
+                    }
                 }
             }
         }
