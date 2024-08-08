@@ -25,7 +25,7 @@ pipeline {
     environment {
         utilsObject = getUtils()
 
-        HOME = env.utils.getHomePath("${params.PublishPlafrom}")
+        HOME = env.utils.getHomePath("${params.PublishPlatform}")
     }
 
     agent any
