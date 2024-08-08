@@ -1,6 +1,6 @@
 
 
-def load() {
+def loadGroovyScript() {
     utils = load 'Utils/utils.groovy'
 }
 
@@ -16,7 +16,7 @@ properties([
 
 pipeline {
     environment {
-        isLoad = load()
+        isLoad = loadGroovyScript()
         HOME = utils.getHomePath("${params.PublishPlafrom}")
     }
 

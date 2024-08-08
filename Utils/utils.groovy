@@ -13,7 +13,7 @@ class Utils {
         return instance
     }
 
-    String getHomePath(String PublishPlatform) {
+    static String getHomePath(String PublishPlatform) {
         if (PublishPlatform.contains('Android') || PublishPlatform.contains('OpenHarmony')) {
             return 'C:/Users/admin'
         } else {
