@@ -20,6 +20,10 @@ class Utils {
             return '/Users/admin'
         }
     }
+
+    String sayHello(String who) {
+        return "Hello world, ${who}"
+    }
 }
 
 return Utils.getInstance()

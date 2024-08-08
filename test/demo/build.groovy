@@ -23,7 +23,7 @@ pipeline {
     environment {
         utils = getUtils()
 
-//        HOME = getHomePath("$params.PublishPlafrom}")
+        HOME = utils.getHomePath("$params.PublishPlafrom}")
     }
 
     agent any
@@ -43,7 +43,7 @@ pipeline {
 ////
 ////
                     echo "${env.utils.sayHello("Wong")}"
-                    echo "${utils.sayHello2("Wong")}"
+                    echo "${utils.sayHello("Wong")}"
 
 
                 }
