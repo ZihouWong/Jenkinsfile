@@ -18,8 +18,8 @@ pipeline {
 
     stages {
         stage('Prepare') {
-            node {
-                steps {
+            steps {
+                node {
                     script {
                         def demoConfig = load 'test/demo/demoConfig.groovy'
                         echo "demoConfig.name: ${demoConfig.name}"
